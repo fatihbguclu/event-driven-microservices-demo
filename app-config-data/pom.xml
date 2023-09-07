@@ -9,44 +9,19 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>twitter-to-kafka-service</artifactId>
+	<artifactId>app-config-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>twitter-to-kafka-service</name>
-	<description>twitter-to-kafka-service</description>
+	<name>app-config-data</name>
+	<description>app-config-data</description>
 
 	<properties>
 		<java.version>11</java.version>
-		<twitter4j.version>4.0.7</twitter4j.version>
 	</properties>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>com.ft</groupId>
-			<artifactId>app-config-data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -55,11 +30,8 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.twitter4j</groupId>
-			<artifactId>twitter4j-stream</artifactId>
-			<version>${twitter4j.version}</version>
-		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -68,12 +40,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
+
 				</configuration>
 			</plugin>
 		</plugins>
