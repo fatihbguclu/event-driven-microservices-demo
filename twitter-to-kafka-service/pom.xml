@@ -19,6 +19,7 @@
 		<twitter4j.version>4.0.7</twitter4j.version>
 	</properties>
 
+
 	<dependencies>
 
 		<dependency>
