@@ -5,13 +5,13 @@ import com.ft.appconfigdata.RetryConfigData;
 import com.ft.kafka.admin.exception.KafkaClientException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.ClientResponse;
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.admin.TopicListing;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.retry.RetryContext;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
@@ -56,21 +56,28 @@ public class KafkaAdminClient {
         int multiplier = retryConfigData.getMultiplier().intValue();
         Long sleepTimeMs = retryConfigData.getSleepTimeMs();
 
+        log.info(" url : {}",kafkaConfigData.getSchemaRegistryUrl());
+
         while (!getSchemaRegistryStatus().is2xxSuccessful()) {
+            log.info("schema registry result {}", getSchemaRegistryStatus().toString());
             checkMaxRetry(retryCount++, maxRetry);
             sleep(sleepTimeMs);
             sleepTimeMs *= multiplier;
         }
     }
 
-    private HttpStatus getSchemaRegistryStatus() {
+    private HttpStatusCode getSchemaRegistryStatus() {
         try {
             return webClient
                     .method(HttpMethod.GET)
                     .uri(kafkaConfigData.getSchemaRegistryUrl())
-                    .exchangeToMono(clientResponse -> clientResponse.bodyToMono(HttpStatus.class))
-                    .block();
+                    .retrieve()
+                    .toBodilessEntity()
+                    .block()
+                    .getStatusCode();
+
         } catch (Exception e) {
+            e.printStackTrace();
             return HttpStatus.SERVICE_UNAVAILABLE;
         }
     }

@@ -28,7 +28,7 @@
         <avro.version>1.10.0</avro.version>
         <spring-boot.version>3.1.2</spring-boot.version>
         <spring-retry.version>1.3.0</spring-retry.version>
-        <spring-kafka.version>2.6.2</spring-kafka.version>
+        <spring-kafka.version>3.0.9</spring-kafka.version>
         <spring-webflux.version>3.1.2</spring-webflux.version>
         <kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
     </properties>
@@ -86,6 +86,11 @@
             <dependency>
                 <groupId>com.ft</groupId>
                 <artifactId>kafka-admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>kafka-producer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

@@ -25,7 +25,21 @@
 		<dependency>
 			<groupId>com.ft</groupId>
 			<artifactId>app-config-data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ft</groupId>
+			<artifactId>kafka-model</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ft</groupId>
+			<artifactId>kafka-admin</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ft</groupId>
+			<artifactId>kafka-producer</artifactId>
 		</dependency>
 
 		<dependency>
