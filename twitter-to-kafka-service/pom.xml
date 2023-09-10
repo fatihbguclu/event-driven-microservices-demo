@@ -6,16 +6,12 @@
 		<groupId>com.ft</groupId>
 		<artifactId>microservices-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<artifactId>twitter-to-kafka-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>twitter-to-kafka-service</name>
-	<description>twitter-to-kafka-service</description>
+
 
 	<properties>
-		<java.version>11</java.version>
 		<twitter4j.version>4.0.7</twitter4j.version>
 	</properties>
 
@@ -89,7 +85,18 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>${project.groupId}/twitter.to.kafka.service:${project.version}</name>
+					</image>
 				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>build-image</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
