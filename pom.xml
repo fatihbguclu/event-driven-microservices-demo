@@ -8,6 +8,7 @@
         <module>app-config-data</module>
         <module>kafka</module>
         <module>common-config</module>
+        <module>kafka-to-elastic-service</module>
     </modules>
 
     <parent>
@@ -91,6 +92,11 @@
             <dependency>
                 <groupId>com.ft</groupId>
                 <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>kafka-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
