@@ -9,6 +9,7 @@
         <module>kafka</module>
         <module>common-config</module>
         <module>kafka-to-elastic-service</module>
+        <module>elastic</module>
     </modules>
 
     <parent>
@@ -32,6 +33,9 @@
         <spring-kafka.version>3.0.9</spring-kafka.version>
         <spring-webflux.version>3.1.2</spring-webflux.version>
         <kafka-avro-serializer.version>7.4.0</kafka-avro-serializer.version>
+        <spring-data-elastic.version>3.1.2</spring-data-elastic.version>
+        <elastic.version>8.7.1</elastic.version>
+        <elastic-high-level-client.version>7.17.4</elastic-high-level-client.version>
     </properties>
 
     <repositories>
@@ -97,6 +101,21 @@
             <dependency>
                 <groupId>com.ft</groupId>
                 <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>elastic-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>elastic-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>elastic-index-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -168,6 +187,23 @@
                         <artifactId>swagger-core</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring-data-elastic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elastic.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elastic-high-level-client.version}</version>
             </dependency>
 
         </dependencies>
