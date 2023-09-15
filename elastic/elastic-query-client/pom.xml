@@ -25,6 +25,10 @@
             <groupId>com.ft</groupId>
             <artifactId>elastic-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.ft</groupId>
+            <artifactId>common-util</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
