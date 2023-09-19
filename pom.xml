@@ -14,6 +14,7 @@
         <module>common-util</module>
         <module>elastic-query-service-common</module>
         <module>elastic-query-web-client-common</module>
+        <module>elastic-query-service</module>
     </modules>
 
     <parent>
@@ -40,6 +41,7 @@
         <spring-data-elastic.version>3.1.2</spring-data-elastic.version>
         <elastic.version>8.7.1</elastic.version>
         <elastic-high-level-client.version>7.17.4</elastic-high-level-client.version>
+        <springdoc-openapi-ui.version>1.7.0</springdoc-openapi-ui.version>
     </properties>
 
     <repositories>
@@ -137,6 +139,19 @@
                 <artifactId>common-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>elastic-query-service-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ft</groupId>
+                <artifactId>elastic-query-web-client-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
@@ -189,6 +204,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-webflux</artifactId>
                 <version>${spring-webflux.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
 
             <dependency>
