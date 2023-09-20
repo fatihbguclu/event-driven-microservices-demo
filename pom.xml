@@ -15,6 +15,7 @@
         <module>elastic-query-service-common</module>
         <module>elastic-query-web-client-common</module>
         <module>elastic-query-service</module>
+        <module>elastic-query-web-client</module>
     </modules>
 
     <parent>
@@ -42,6 +43,8 @@
         <elastic.version>8.7.1</elastic.version>
         <elastic-high-level-client.version>7.17.4</elastic-high-level-client.version>
         <springdoc-openapi-ui.version>1.7.0</springdoc-openapi-ui.version>
+        <thymeleaf-extra-security.version>3.1.2.RELEASE</thymeleaf-extra-security.version>
+        <spring-cloud-loadbalancer.version>4.0.4</spring-cloud-loadbalancer.version>
     </properties>
 
     <repositories>
@@ -186,6 +189,22 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-validation</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.thymeleaf.extras</groupId>
+                <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+                <version>${thymeleaf-extra-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-loadbalancer</artifactId>
+                <version>${spring-cloud-loadbalancer.version}</version>
             </dependency>
 
             <dependency>
